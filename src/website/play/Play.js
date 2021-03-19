@@ -46,7 +46,7 @@ export default function Play(props) {
         introText: 3
       });
     }, 2000);
-
+  // eslint-disable-next-line
   }, []);
 
   function getRandomSuccessText() {

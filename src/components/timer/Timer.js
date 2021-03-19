@@ -34,6 +34,7 @@ export default function Timer(props){
     return () => {
       endTimer = true;
     };
+    // eslint-disable-next-line
   }, []);
 
   function formatTimeInSec(timeInMS) {

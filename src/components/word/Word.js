@@ -6,12 +6,14 @@ export default function Word(props){
 
   useEffect(() => {
     compareWord(props.word, props.typedWord);
+    // eslint-disable-next-line
   }, [props]);
 
   function compareWord(actualWord, typedWord) {
     if (!actualWord) {
       return;
     }
+
 
     actualWord = actualWord.toLowerCase();
     typedWord = typedWord.toLowerCase();
