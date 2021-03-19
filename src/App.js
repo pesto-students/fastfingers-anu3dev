@@ -30,7 +30,7 @@ export default function App() {
     bestGame: ""
   });
 
- 
+  // eslint-disable-next-line
   const [isDictionaryLoading, setIsDictionaryLoading] = useState(false);
 
   const [previousGames, setPreviousGames] = useState([]);
@@ -79,6 +79,7 @@ export default function App() {
       bestGame
     });
   }
+
 
   function appendToPreviousGames() {
     const now = new Date().getTime();
