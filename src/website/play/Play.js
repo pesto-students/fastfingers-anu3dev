@@ -31,21 +31,8 @@ export default function Play(props) {
   useEffect(() => {
     setTimeout(() => {
       giveNewWord();
-    }, 3000);
-
-    setTimeout(() => {
-      setState({
-        ...state,
-        introText: 2
-      });
     }, 1000);
 
-    setTimeout(() => {
-      setState({
-        ...state,
-        introText: 3
-      });
-    }, 2000);
   // eslint-disable-next-line
   }, []);
 

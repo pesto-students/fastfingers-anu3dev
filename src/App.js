@@ -26,7 +26,7 @@ export default function App() {
     gameStartDifficultyFactor: null,
     difficultyFactor: null,
     gameStartTime: null,
-    screen: "welcome",
+    page: "welcome",
     bestGame: ""
   });
 
@@ -45,6 +45,7 @@ export default function App() {
     setIsDictionaryLoading(false);
   }
 
+
   function startGame(
     name = state.playerName,
     level = state.gameStartDifficultyFactor
@@ -60,7 +61,7 @@ export default function App() {
 
     setState({
       ...state,
-      screen: "play",
+      page: "play",
       gameName: `Game ${gameNumber}`,
       gameStartTime: new Date().getTime(),
       playerName: name,
@@ -75,7 +76,7 @@ export default function App() {
       ...state,
       gameStartTime: null,
       difficultyFactor: null,
-      screen: "quit",
+      page: "quit",
       bestGame
     });
   }
@@ -130,7 +131,7 @@ export default function App() {
       </div>
 
       <div className="App-middle">
-        {state.screen === "welcome" && (
+        {state.page === "welcome" && (
           <Welcome
             app={{ name: APP_NAME, tag: TAG_LINE }}
             difficultyLevels={DIFFICULTY_LEVELS}
@@ -138,7 +139,7 @@ export default function App() {
           />
         )}
 
-        {state.screen === "play" && (
+        {state.page === "play" && (
           <Play
             difficultyFactor={state.difficultyFactor}
             onSuccess={successfulWord}
@@ -146,10 +147,9 @@ export default function App() {
           />
         )}
 
-        {state.screen === "quit" && (
+        {state.page === "quit" && (
           <Quit
             game={previousGames[previousGames.length - 1]}
-            bestGame={state.bestGame}
             goAgain={startGame}
           />
         )}

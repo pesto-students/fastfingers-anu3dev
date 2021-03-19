@@ -7,7 +7,6 @@ export const loadDictionary = async (minLength, maxLength) => {
     const length = word.length;
 
     if (length < minLength || length > maxLength) {
-      //only serving 4-12characters words
       return acc;
     }
 
