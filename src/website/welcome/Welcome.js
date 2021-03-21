@@ -48,7 +48,6 @@ export default function Welcome(props) {
         tabIndex={0}
       />
 
-
       <IconButton
         onClick={startGame}
         icon={play}

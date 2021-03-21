@@ -8,9 +8,6 @@ import Left from './components/left/Left';
 import Right from './components/right/Right';
 import { ResizeContext } from './context/resizeContext';
 
-
-//move constants to separate file
-
 const WORD_MIN_LENGTH = 4;
 const WORD_MAX_LENGTH = 12;
 
@@ -20,17 +17,9 @@ const DIFFICULTY_LEVELS = [
   { text: 'MEDIUM', difficultyFactor: 1.5 },
   { text: 'HARD', difficultyFactor: 2 },
 ]
-// eslint-disable-next-line
-const MIN_DIFFICULTY_FACTOR = 1; //can't get easier than EASY
-// eslint-disable-next-line
-const MAX_DIFFICULTY_FACTOR = 3; // capping the difficulty
 
 const APP_NAME = 'FAST FINGERS'
 const TAG_LINE = 'the ultimate typing game'
-
-
-
-
 
 export default function App() {
 
@@ -45,7 +34,6 @@ export default function App() {
     screen: 'welcome',
     bestGame: ''
   })
-
 
   // eslint-disable-next-line
   const [isDictionaryLoading, setIsDictionaryLoading] = useState(false)
@@ -128,15 +116,13 @@ export default function App() {
       ...games
     ])
   
-    localStorage.setItem(state.playerName, JSON.stringify(games)); //setting in localstorage
+    localStorage.setItem(state.playerName, JSON.stringify(games)); 
 
     return bestGame.gameName;
   }
 
 
   function quitGame() {
-    //show alert
-    // window.close();
     goToHome()
   }
 
