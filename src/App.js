@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from 'react';
 import "./App.css";
 import Welcome from "./website/welcome/Welcome";
 import Play from "./website/play/Play";
@@ -6,6 +6,8 @@ import Quit from "./website/quit/Quit";
 import { loadDictionary } from "./utility/dictionary";
 import Left from './components/left/Left';
 import Right from './components/right/Right';
+import { ResizeContext } from './context/resizeContext';
+
 
 //move constants to separate file
 
@@ -31,6 +33,8 @@ const TAG_LINE = 'the ultimate typing game'
 
 
 export default function App() {
+
+  const { isWideScreen } = useContext(ResizeContext);
 
   const [state, setState] = useState({
     playerName: 'Guest',
@@ -154,7 +158,7 @@ export default function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${isWideScreen ? 'wide-screen' : ''}`}>
 
       <div
         className="App-left">
@@ -169,7 +173,6 @@ export default function App() {
           difficultyFactor={state.difficultyFactor}
           startGameDifficultyFactor= {state.gameStartDifficultyFactor} />}
       </div>
-
 
 
       <div className="App-middle" screen={state.screen}>

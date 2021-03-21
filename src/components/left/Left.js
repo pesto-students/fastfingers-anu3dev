@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import IconButton from '../iconButton/IconButton';
 import ScoreBoard from '../scoreboard/ScoreBoard';
 import './Left.css'
 import playerIcon from '../../assets/playerIcon.svg';
 import levelIcon from '../../assets/game.svg';
 import crossIcon from '../../assets/cross.svg';
+import { ResizeContext } from '../../context/resizeContext';
+
 
 export default function Left(props){
+
+  const {isWideScreen} = useContext(ResizeContext)
 
   function stopGameClicked(){
     props.end && props.end();
@@ -38,38 +42,38 @@ export default function Left(props){
   }
 
   return (
-    <div className="App-left__panel">
+    <div className={`App-left__panel ${isWideScreen ? 'wide-screen' : ''}`}>
       <div className="game-details">
         <IconButton 
           disabled={true}
-          fontSize='44px'
-          iconHeight='40px'
+          fontSize={isWideScreen ? '44px' : '22px'}
+          iconHeight={isWideScreen ? '40px' : '20px'}
           text={props.playerName}
           icon={playerIcon}/>
 
         <IconButton 
           disabled={true}
-          fontSize='44px'
-          iconHeight='40px'
+          fontSize={isWideScreen ? '44px' : '22px'}
+          iconHeight={isWideScreen ? '40px' : '10px'}
           text={calculateLevel()}
           icon={levelIcon} />
       </div>
       <div className="score-card-container">
-        {props.screen === 'play' && <ScoreBoard scores={props.previousGames} bestGame={props.bestGame} />}
+        {props.screen === 'play' && isWideScreen && <ScoreBoard scores={props.previousGames} bestGame={props.bestGame} />}
       </div>
       <div className="game-end">
         {props.screen === 'play' && 
         <IconButton
          onClick={stopGameClicked}
         text={'STOP'}
-        fontSize='47px'
+        fontSize={isWideScreen ? '47px' : '24px'}
         icon={crossIcon}
-          iconHeight='70px'/>}
+          iconHeight={isWideScreen ? '70px' : '35px'}/>}
         
         {props.screen === 'quit' &&
         <IconButton 
           onClick={quitGameClicked}
-          fontSize='57px'
+          fontSize={isWideScreen ? '57px' : '24px'}
           text={'QUIT'} />}
       </div>
     </div>

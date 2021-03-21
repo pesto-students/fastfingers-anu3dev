@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Dropdown.css";
 import dropdown from "../../assets/dropdown.svg";
+import { ResizeContext } from "../../context/resizeContext"
 
 export default function Dropdown(props) {
+
+  const {isWideScreen} = useContext(ResizeContext);
+
   const [state, setState] = useState({
     selectedText: "",
     selectedIndex: -1,
@@ -53,7 +57,7 @@ export default function Dropdown(props) {
 
   return (
     <div
-      className="App-Dropdown"
+      className={`App-Dropdown ${isWideScreen ? 'wide-screen' : ''}`}
       tabIndex={props.tabIndex}
       onKeyDown={keyDowned}
     >

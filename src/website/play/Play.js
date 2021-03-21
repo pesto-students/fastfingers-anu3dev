@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Input from "../../components/input/Input";
 import Timer from "../../components/timer/Timer";
 import Word from "../../components/word/Word";
 import { getRandomWordFromDictionary } from "../../utility/dictionary";
 import mapRange from "../../utility/mapRange";
+import { ResizeContext } from '../../context/resizeContext'
+
 import "./Play.css";
 
 const GAME_STATES = {
@@ -26,6 +28,7 @@ export default function Play(props) {
     introText: 1
   })
 
+  const { isWideScreen } = useContext(ResizeContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -111,7 +114,7 @@ export default function Play(props) {
 
 
   return (
-    <div className="App-Game">
+    <div className={`App-Game ${isWideScreen ? 'wide-screen' : ''}`}>
       {
         state.gameState === GAME_STATES.READY &&
         <>
@@ -146,3 +149,4 @@ export default function Play(props) {
     </div>
   )
 }
+

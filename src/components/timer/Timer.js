@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { ResizeContext } from '../../context/resizeContext';
 import "./Timer.css";
 
 let endTimer = false;
@@ -11,8 +12,10 @@ export default function Timer(props){
     circlePath: ""
   });
 
-  const TIMER_DIMENSION = "257.1";
-  const TIMER_STROKE_WIDTH = "15";
+  const {isWideScreen} = useContext(ResizeContext);
+
+  const TIMER_DIMENSION = isWideScreen ? '257.1' : '180';
+  const TIMER_STROKE_WIDTH = isWideScreen? '15' : '10';
 
   const [pathLength, setPathLength] = useState(0);
   const [timeLeft, setTimeLeft] = useState(null);
@@ -87,6 +90,7 @@ export default function Timer(props){
       radius * 2
     },0 a ${radius},${radius} 0 1,0 -${radius * 2},0`;
   }
+
 
   return (
     <div className="App-Timer">
