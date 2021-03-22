@@ -65,7 +65,7 @@ export default function Left(props){
         {props.screen === 'play' && 
         <IconButton
          onClick={stopGameClicked}
-        text={'STOP'}
+        text={'STOP Game'}
         fontSize={isWideScreen ? '47px' : '24px'}
         icon={crossIcon}
           iconHeight={isWideScreen ? '70px' : '35px'}/>}

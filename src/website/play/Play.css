@@ -8,9 +8,6 @@
   color: red;
 }
 
-
-
-
 .App-Game div{
   font-family: 'Gotham', sans-serif;
   font-size: 30px;
@@ -24,7 +21,6 @@
 .intro-text{
   animation: intro 0.3s ease-out;
 }
-
 
 @keyframes intro {
   0% { opacity:  0;}
