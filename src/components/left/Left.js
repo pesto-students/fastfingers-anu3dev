@@ -3,8 +3,8 @@ import IconButton from '../iconButton/IconButton';
 import ScoreBoard from '../scoreboard/ScoreBoard';
 import './Left.css'
 import playerIcon from '../../assets/playerIcon.svg';
-import levelIcon from '../../assets/game.svg';
-import crossIcon from '../../assets/cross.svg';
+import game from '../../assets/game.svg';
+import cross from '../../assets/cross.svg';
 import { ResizeContext } from '../../context/resizeContext';
 
 
@@ -56,7 +56,7 @@ export default function Left(props){
           fontSize={isWideScreen ? '44px' : '22px'}
           iconHeight={isWideScreen ? '40px' : '10px'}
           text={calculateLevel()}
-          icon={levelIcon} />
+          icon={game} />
       </div>
       <div className="score-card-container">
         {props.screen === 'play' && isWideScreen && <ScoreBoard scores={props.previousGames} bestGame={props.bestGame} />}
@@ -67,7 +67,7 @@ export default function Left(props){
          onClick={stopGameClicked}
         text={'STOP Game'}
         fontSize={isWideScreen ? '47px' : '24px'}
-        icon={crossIcon}
+        icon={cross}
           iconHeight={isWideScreen ? '70px' : '35px'}/>}
         
         {props.screen === 'quit' &&
