@@ -63,6 +63,7 @@ export default function Play(props) {
     return mappedValue;
   }
 
+  
   function giveNewWord() {
     const word = getRandomWord();
     setState({
@@ -141,8 +142,7 @@ export default function Play(props) {
       {
         state.gameState === GAME_STATES.FAIL &&
         <>
-          <div>You got a 5 sec break.</div>
-          <div>Be ready for next challenge.</div>
+          <div>Oops!</div>
         </>
       }
 

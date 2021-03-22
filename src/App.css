@@ -1,23 +1,24 @@
-.App {
+.App{
+  height: 100%;
   width: 100%;
   display: grid;
   background-image: linear-gradient(to bottom, #000000, #063c47f5),
     url("/background.svg");
-  grid-template-rows: 1fr auto 1fr;
-  grid-template-columns: unset;
-  grid-template-areas:
-    "right"
-    "middle"
-    "left";
-  box-sizing: border-box;
-  padding: 10px;
-}
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: unset;
+    grid-template-areas: "right"
+                          "middle" 
+                          "left";
+    box-sizing: border-box; 
+    padding: 10px;
+  }
 
 .App .App-left{
   grid-area: left;
   display: flex;
   align-items: flex-end;
 }
+
 
 .App .App-middle {
   grid-area: middle;
@@ -30,7 +31,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
 .App.wide-screen{
   padding: 25px;
   grid-template-columns: 1fr auto 1fr;

@@ -10,10 +10,9 @@
 .App-line-text .line{
   position: relative;
   bottom: 50%;
-  border-bottom :2px solid #ff5155;
+  border-bottom :1px solid #ff5155;
   flex:1
 }
-
 
 .App-line-text .text{
   margin: 0px 10px;

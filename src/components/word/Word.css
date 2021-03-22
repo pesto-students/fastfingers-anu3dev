@@ -4,7 +4,6 @@
   user-select: none;
 }
 
-
 .App-Word div{
   transition: all 0.2s;
   color: white;
@@ -16,18 +15,15 @@
   top: 0px
 }
 
-
 .App-Word div.matched{
   color: #54ba18;
   animation: matched-letter 0.5s cubic-bezier(0.59, 2.47, 0, 0.02);
 }
 
-
 .App-Word div.unmatched{
   color: #445298;
   animation: unmatched-letter 0.5s cubic-bezier(0.59, 2.47, 0, 0.02);
 }
-
 
 @keyframes unmatched-letter{
   0% { transform: rotate(20deg) }

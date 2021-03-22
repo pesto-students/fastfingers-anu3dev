@@ -1,37 +1,40 @@
-.App-Home {
+.App-Home{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 700px;
+  height: 100%;
   max-width: 362px;
-  color: #ff5155;
-  font-size: 40px;
-  margin-top: 20px;
-  font-family: "lasercorpsgrad", sans-serif;
 }
 
-.App-Home.wide-screen {
+.App-Home.wide-screen{
   max-width: 662px;
 }
 
+.App-name{
+  color: #ff5155;
+  font-size: 31px;
 
-.App-Home.wide-screen .App-name {
+  margin-top:20px;
+  font-family: 'lasercorpsgrad', sans-serif;
+}
+
+.App-Home.wide-screen .App-name{
   font-size: 61px;
 }
 
-.App-tag {
+.App-tag{
   margin-bottom: 30px;
 }
 
 .App-Home.wide-screen .App-tag {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.App-Home .App-logo {
+.App-Home .App-logo{
   width: 180px;
 }
 
 .App-Home.wide-screen .App-logo {
-  width: unset;
+  width:unset;
 }

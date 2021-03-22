@@ -1,25 +1,36 @@
-.App-Dropdown {
+.App-Dropdown{
   position: relative;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 150px;
+  width:100%;
+  margin-top:10px;
+  margin-bottom: 50px;
   outline: none;
   border-radius: 10px;
   border: 1px solid transparent;
-  font-family: "breamcatcher", sans-serif;
+  font-family: 'breamcatcher', sans-serif;
 }
 
-.App-Dropdown.wide-screen {
-  margin-top: 20px;
-  margin-bottom: 150px;
+.App-Dropdown.wide-screen{
+  margin-top:20px;
+  margin-bottom: 100px;
 }
 
-.App-Dropdown .dropdown-main {
+.App-Dropdown:hover{ 
+  transition: all 0.3s;
+  border: 1px solid white;
+  box-shadow: 5px 5px 5px 0px rgb(255, 255, 255);
+}
+
+.App-Dropdown:focus {
+  transition: all 0.3s;
+  box-shadow: 5px 5px 5px 0px rgb(255, 255, 255);
+}
+
+.App-Dropdown .dropdown-main{
   color: #97a5a7;
   font-size: 25px;
   padding: 0px 15px;
   border-radius: 10px;
-  border: 1px solid #97a5a7;
+  border:1px solid #97a5a7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,12 +39,13 @@
   cursor: pointer;
 }
 
-.App-Dropdown.wide-screen .dropdown-main {
+.App-Dropdown.wide-screen .dropdown-main{
   font-size: 30px;
   padding: 0px 25px;
+  height: 70px;
 }
 
-.App-Dropdown .dropdown-options {
+.App-Dropdown .dropdown-options{
   font-size: 20px;
   position: absolute;
   width: 100%;
@@ -45,22 +57,21 @@
 }
 
 .App-Dropdown .dropdown-options.show {
-  /* visibility: visible; */
   display: block;
 }
 
-.App-Dropdown .dropdown-options__content {
+.App-Dropdown .dropdown-options__content{
   background-color: rgba(255, 255, 255, 0.796);
   display: flex;
   flex-direction: column;
   border-radius: 0px 0px 10px 10px;
-  margin: 10px;
-  padding: 10px;
-  margin-top: 0px;
+  margin:10px;
+  padding:10px;
+  margin-top:0px;
 }
 
 .App-Dropdown .dropdown-options span {
-  padding: 8px;
+  padding:8px;
   cursor: pointer;
   color: #032228;
   border-radius: 10px;
@@ -71,7 +82,7 @@
   background-color: #053a4563;
 }
 
-.App-Dropdown .dropdown-options span:hover {
+.App-Dropdown .dropdown-options span:hover{
   transition: all 0.3s;
   color: white;
   background-color: #053a4563;
@@ -81,5 +92,5 @@
   transition: all 0.3s;
   color: white;
   background-color: #053a4563;
-  outline: none;
+  outline:none;
 }

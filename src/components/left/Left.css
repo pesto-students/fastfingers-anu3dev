@@ -5,7 +5,6 @@
   display: flex;
 }
 
-
 .App-left__panel.wide-screen{
   max-width: 300px;
   flex-direction: column;

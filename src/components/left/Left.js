@@ -74,6 +74,7 @@ export default function Left(props){
         <IconButton 
           onClick={quitGameClicked}
           fontSize={isWideScreen ? '57px' : '24px'}
+          icon={cross}
           text={'QUIT'} />}
       </div>
     </div>
