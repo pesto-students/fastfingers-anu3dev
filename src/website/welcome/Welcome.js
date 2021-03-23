@@ -9,7 +9,7 @@ import play from "../../assets/play.svg";
 import { ResizeContext } from '../../context/resizeContext'
 
 export default function Welcome(props) {
-  const [state, setState] = useState({ name: "", difficultyLevel: {} });
+  const [state, setState] = useState({ name: "", difficultyLevel: {}, errorMessage: "" });
   const {isWideScreen} = useContext(ResizeContext);
 
   function startGame() {
@@ -22,14 +22,18 @@ export default function Welcome(props) {
       difficultyLevel: { ...difficultyLevel }
     });
   }
-
   function onInputKeyUp(name) {
     setState({
       ...state,
       name: name.toUpperCase()
     });
   }
-
+  function test (value) {
+    setState({
+      ...state,
+      errorMessage: value
+    });
+    }
   
   return (
     <div className={`App-Home ${isWideScreen ? 'wide-screen': ''}`}>
@@ -41,13 +45,14 @@ export default function Welcome(props) {
         placeholder={"Type Your Name"}
         tabIndex={0}
       />
+      {/* <p> {state.errorMessage} </p> */}
       <Dropdown
-        default={{ text: "DIFFICULTY LEVEL" }}
+        default="EASY"
         options={props.difficultyLevels}
         onChange={onDifficultyLevelChange}
         tabIndex={0}
       />
-
+    
       <IconButton
         onClick={startGame}
         icon={play}
@@ -56,6 +61,7 @@ export default function Welcome(props) {
         text={"Start Game"}
         tabIndex={0}
         disabled={!state.name || !state.difficultyLevel.difficultyFactor}
+        callBack={test}
       />
     </div>
   );

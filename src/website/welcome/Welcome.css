@@ -14,9 +14,8 @@
 .App-name{
   color: #ff5155;
   font-size: 31px;
-
   margin-top:20px;
-  font-family: 'lasercorpsgrad', sans-serif;
+  font-family: 'Target3D', sans-serif;
 }
 
 .App-Home.wide-screen .App-name{
@@ -24,11 +23,11 @@
 }
 
 .App-tag{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .App-Home.wide-screen .App-tag {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .App-Home .App-logo{

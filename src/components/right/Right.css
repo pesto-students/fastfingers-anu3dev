@@ -7,22 +7,21 @@
   align-items: flex-start;
   font-size: 30px;
   color: #ff5155;
-  font-family: 'lasercorpsgrad', sans-serif;
+  font-family: 'Target3D', sans-serif;
   text-align: start;
 }
 
 .App-right__panel span {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .App-right__panel.wide-screen span{
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 .App-right__panel.wide-screen {
   flex-direction: column;
   align-items: flex-end;
   text-align: end;
-  font-size: unset;
-  font-size: 56px;
+  font-size: 50px;
 }

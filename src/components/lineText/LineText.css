@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  font-family: 'Gotham', sans-serif;
+  font-family: 'TarrgetRegular', sans-serif;
 }
 
 .App-line-text .line{
   position: relative;
   bottom: 50%;
-  border-bottom :1px solid #ff5155;
+  border-bottom :2px solid #ff5155;
   flex:1
 }
 

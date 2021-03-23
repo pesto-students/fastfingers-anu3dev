@@ -1,12 +1,12 @@
 .App-Dropdown{
   position: relative;
   width:100%;
-  margin-top:10px;
+  margin-top:15px;
   margin-bottom: 50px;
   outline: none;
   border-radius: 10px;
   border: 1px solid transparent;
-  font-family: 'breamcatcher', sans-serif;
+  font-family: 'TarrgetRegular', sans-serif;
 }
 
 .App-Dropdown.wide-screen{
@@ -15,14 +15,12 @@
 }
 
 .App-Dropdown:hover{ 
-  transition: all 0.3s;
   border: 1px solid white;
-  box-shadow: 5px 5px 5px 0px rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 0px rgb(255, 255, 255);
 }
 
 .App-Dropdown:focus {
-  transition: all 0.3s;
-  box-shadow: 5px 5px 5px 0px rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 0px rgb(255, 255, 255);
 }
 
 .App-Dropdown .dropdown-main{

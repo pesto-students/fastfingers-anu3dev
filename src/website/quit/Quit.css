@@ -15,8 +15,9 @@
 }
 
 .App-EndGame.wide-screen .end__game-name {
-  font-size: 70px;
-  margin-bottom: 47px;
+  margin-top: 200px;
+  font-size: 60px;
+  margin-bottom: 45px;
 }
 
 .end__game-time{
@@ -36,5 +37,5 @@
 
 .App-EndGame.wide-screen .end__game-high {
   font-size: 53px;
-  margin-bottom: 76px;
+  margin-bottom: 75px;
 }

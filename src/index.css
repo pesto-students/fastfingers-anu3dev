@@ -9,21 +9,25 @@ html, body, #root{
 }
 
 @font-face {
+  /* input */
   font-family: 'breamcatcher';
   src: local('breamcatcher'), url(./fonts/breamcatcher.ttf) format('opentype');
 }
 
 @font-face {
-  font-family: 'lasercorpsgrad';
-  src: local('lasercorpsgrad'), url(./fonts/tarrget-font/TarrgetEngravedRegular-J7EE.otf) format('opentype');
+  /* heading */
+  font-family: 'Target3D';
+  src: local('Target3D'), url(./fonts/Tarrget3DRegular.otf) format('opentype');
 }
 
 @font-face {
+  /* heading */
+  font-family: 'TarrgetRegular';
+  src: local('TarrgetRegular'), url(./fonts/TarrgetRegular.otf) format('opentype');
+}
+
+@font-face {
+  /* tagline */
   font-family: 'Gotham';
   src: local('Gotham'), url(./fonts/Gotham.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'war';
-  src: local('war'), url(./fonts/war.ttf) format('opentype');
 }

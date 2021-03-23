@@ -3,23 +3,17 @@ import "./IconButton.css";
 
 export default function Button(props){
   function clickHandler() {
+    
     !props.disabled && props.onClick && props.onClick();
-  }
-
-  function keyDowned(keyboardEvent) {
-    if (keyboardEvent.keyCode === 13) {
-      clickHandler();
-    }
+    //props.callBack("kuchh bhi")
   }
 
   return (
     <div
       onClick={clickHandler}
-      onKeyDown={keyDowned}
-      disabled={props.disabled}
+      //disabled={props.disabled}
       className="App-Icon-Button"
       title={props.text}
-      tabIndex={props.tabIndex ? props.tabIndex : 0}
     >
       {props.icon && (
         <img src={props.icon} alt={props.text} height={props.iconHeight} />

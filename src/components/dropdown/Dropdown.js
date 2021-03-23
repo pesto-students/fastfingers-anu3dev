@@ -8,15 +8,15 @@ export default function Dropdown(props) {
   const {isWideScreen} = useContext(ResizeContext);
 
   const [state, setState] = useState({
-    selectedText: "",
-    selectedIndex: -1,
+    selectedText: "EASY",
+    selectedIndex: 0,
     options: [],
     isOptionsOpen: false
   });
 
   useEffect(() => {
     setState({
-      selectedText: props.default.text,
+      selectedText: props.default,
       selectedIndex: -1,
       options: props.options
     });
@@ -62,7 +62,7 @@ export default function Dropdown(props) {
       onKeyDown={keyDowned}
     >
       <div className="dropdown-main" onClick={toggleOptions}>
-        <span>{state.selectedText}</span>
+        <span>{state.selectedText }</span>
         <img src={dropdown} alt="pp" />
       </div>
       <div className={`dropdown-options ${state.isOptionsOpen ? "show" : ""}`}>
