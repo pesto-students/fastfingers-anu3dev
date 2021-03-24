@@ -20,7 +20,7 @@ export default function Welcome(props) {
   function Error(error){
     setState({
       ...state,
-      error: "player name is missing."
+      error: "Player name is missing."
     });
   }
   function onDifficultyLevelChange(difficultyLevel) {
@@ -55,7 +55,7 @@ export default function Welcome(props) {
         style={props.style}
         autoFocus
       />
-        <p>{state.error}</p>
+      <p>{state.error}</p>
       <Dropdown
         default="EASY"
         options={props.difficultyLevels}
