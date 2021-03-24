@@ -14,6 +14,7 @@ export default function Word(props){
       return;
     }
 
+
     actualWord = actualWord.toLowerCase();
     typedWord = typedWord.toLowerCase();
 

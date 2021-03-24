@@ -91,6 +91,10 @@ export default function App() {
     const now = new Date().getTime();
     const gameTimeInMS = now - state.gameStartTime;
     const gameTime = `${parseInt(gameTimeInMS / 1000)}:${((gameTimeInMS % 1000) + '0').substring(0, 2)}` 
+    setState({
+      ...state,
+      gameTime: gameTime
+    })
     const thisGame = {
       gameName: state.gameName,
       playerName: state.playerName,
@@ -100,7 +104,6 @@ export default function App() {
       gameTimeInMS,
       gameTime
     }
-
     const games = [...previousGames, thisGame]
 
     let bestGame = games[0]
@@ -193,7 +196,11 @@ export default function App() {
 
 
       <div className="App-right">
-        {state.screen !== 'welcome' && <Right goHome={goToHome} screen={state.screen} />}
+        {state.screen !== 'welcome' && 
+        <Right 
+          goHome={goToHome} 
+          screen={state.screen} 
+        />}
       </div>
     </div>
   );

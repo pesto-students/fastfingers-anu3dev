@@ -8,7 +8,6 @@ export default function Right(props){
   return (
     <div className={`App-right__panel ${isWideScreen ? 'wide-screen' : ''}`}> 
       <span>FAST FINGERS</span>
-      <h4>Score: 00:00</h4>
     </div>
   );
 };

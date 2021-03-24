@@ -5,7 +5,6 @@ import reload from "../../assets/reload.svg";
 import { ResizeContext } from '../../context/resizeContext'
 
 export default function Quit(props) {
-
   const {isWideScreen} = useContext(ResizeContext)
   
     function playAgainClicked(){

@@ -34,6 +34,7 @@ export default function Timer(props){
       parseInt(props.timeInSec * 1000)
     );
 
+
     return () => {
       endTimer = true;
     };

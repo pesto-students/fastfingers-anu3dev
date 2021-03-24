@@ -5,7 +5,6 @@ import Word from "../../components/word/Word";
 import { getRandomWordFromDictionary } from "../../utility/dictionary";
 import mapRange from "../../utility/mapRange";
 import { ResizeContext } from '../../context/resizeContext'
-
 import "./Play.css";
 
 const GAME_STATES = {
@@ -112,7 +111,6 @@ export default function Play(props) {
       giveNewWord();
     }, 1000);
   }
-
 
   return (
     <div className={`App-Game ${isWideScreen ? 'wide-screen' : ''}`}>
