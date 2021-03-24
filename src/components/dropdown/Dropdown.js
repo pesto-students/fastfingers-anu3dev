@@ -17,7 +17,7 @@ export default function Dropdown(props) {
   useEffect(() => {
     setState({
       selectedText: props.default,
-      selectedIndex: -1,
+      selectedIndex: 0,
       options: props.options
     });
     // eslint-disable-next-line
@@ -54,7 +54,6 @@ export default function Dropdown(props) {
       }, 100);
     }
   }
-
   return (
     <div
       className={`App-Dropdown ${isWideScreen ? 'wide-screen' : ''}`}

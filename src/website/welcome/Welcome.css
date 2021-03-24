@@ -37,3 +37,9 @@
 .App-Home.wide-screen .App-logo {
   width:unset;
 }
+
+.App-Home p{
+  color: #ff5155;
+  margin: -10px 0px -10px 0px;
+  font-weight: bold;
+}

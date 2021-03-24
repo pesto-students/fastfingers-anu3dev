@@ -25,3 +25,7 @@
   text-align: end;
   font-size: 50px;
 }
+.App-right__panel h4 {
+  font-family: 'TarrgetRegular', sans-serif;
+  font-size: 40px;
+}

@@ -11,7 +11,6 @@ import { ResizeContext } from './context/resizeContext';
 const WORD_MIN_LENGTH = 4;
 const WORD_MAX_LENGTH = 12;
 
-
 const DIFFICULTY_LEVELS = [
   { text: 'EASY', difficultyFactor: 1 },
   { text: 'MEDIUM', difficultyFactor: 1.5 },

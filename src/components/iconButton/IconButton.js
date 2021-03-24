@@ -5,7 +5,9 @@ export default function Button(props){
   function clickHandler() {
     
     !props.disabled && props.onClick && props.onClick();
-    //props.callBack("kuchh bhi")
+    if (!props.player){ 
+      props.callBack("Player name is empty.")
+    }
   }
 
   return (
