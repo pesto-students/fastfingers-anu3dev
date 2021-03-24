@@ -1,20 +1,27 @@
-import React, { useContext, useState } from "react";
-import IconButton from "../../components/iconButton/IconButton";
-import LineText from "../../components/lineText/LineText";
+import React, { useContext, useState, useRef } from "react";
 import "./Welcome.css";
 import keyboard from "./../../assets/keyboard.svg";
-import Input from "../../components/input/Input";
 import Dropdown from "../../components/dropdown/Dropdown";
 import play from "../../assets/play.svg";
 import { ResizeContext } from '../../context/resizeContext'
 
 export default function Welcome(props) {
-
-  const [state, setState] = useState({ name: "", difficultyLevel: {}, errorInputMessage: "" });
+  const inputRef = useRef();
+  const [state, setState] = useState({ name: "", difficultyLevel: {}, error:""});
   const {isWideScreen} = useContext(ResizeContext);
 
   function startGame() {
-    props.startGame && props.startGame(state.name, state.difficultyLevel);
+    if(!state.name || !state.difficultyLevel){
+      Error();
+    } else{
+      props.startGame && props.startGame(state.name, state.difficultyLevel);
+    }
+  }
+  function Error(error){
+    setState({
+      ...state,
+      error: "player name is missing."
+    });
   }
   function onDifficultyLevelChange(difficultyLevel) {
     setState({
@@ -22,49 +29,45 @@ export default function Welcome(props) {
       difficultyLevel: { ...difficultyLevel }
     });
   }
-  function onInputKeyUp(name) {
+  function onKeyUpHandler() {
+    const playerName = inputRef.current.value.toUpperCase();
+    props.onKeyUp && props.onKeyUp(playerName);
     setState({
-      ...state,
-      name: name.toUpperCase()
-    });
+          ...state,
+          name: playerName
+        });
   }
-  function errorMessage (errorInputMessage) {
-    setState({
-      ...state,
-      error: errorInputMessage
-    });
-    }
-  
   return (
     <div className={`App-Home ${isWideScreen ? 'wide-screen': ''}`}>
       <img className="App-logo" src={keyboard} alt={props.app.name} />
       <span className="App-name">{props.app.name}</span>
-      <LineText className="App-tag" text={props.app.tag} />
-      <div>
-      <Input
-        onKeyUp={onInputKeyUp}
-        placeholder={"Type Your Name"}
+      <span className="App-tag App-line-text">
+        <span className="line"></span>
+        <span className="text">{props.app.tag}</span>
+        <span className="line"></span>
+      </span>
+      <input type="text"
+        className={`App-Input ${isWideScreen ? 'wide-screen' : ''} `}
+        ref={inputRef}
         tabIndex={0}
+        placeholder={"Type Your Name"}
+        onKeyUp={onKeyUpHandler}
+        style={props.style}
+        autoFocus
       />
-      <p> {state.error} </p>
+        <p>{state.error}</p>
       <Dropdown
         default="EASY"
         options={props.difficultyLevels}
         onChange={onDifficultyLevelChange}
         tabIndex={0}
       />
-      </div>
-      <IconButton
+      <button
+        className="App-Icon-Button"
         onClick={startGame}
-        icon={play}
-        fontSize={isWideScreen ? '48px' : '24px'}
-        iconHeight={isWideScreen ? '71px' : '35px'}
-        text={"Start Game"}
-        tabIndex={0}
-        disabled={!state.name || !state.difficultyLevel.difficultyFactor}
-        callBack={errorMessage}
-        player={state.name}
-      />
+      >
+        <img src={play} alt=""/>Start Game
+      </button>
     </div>
   );
 }
