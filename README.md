@@ -1,6 +1,6 @@
 # Fast Fingers
 
-Pesto Tech is proudly launching its own speed typing game named **Fast fingers**. You have been awarded with the project and you need to design and develop this project which should
+launching its own speed typing game named **Fast fingers**. You have been awarded with the project and you need to design and develop this project which should
 meet the requirements mentioned in the MVP below.
 
 ## MVP Requirement
